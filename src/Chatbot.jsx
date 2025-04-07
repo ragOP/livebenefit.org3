@@ -29,16 +29,16 @@ export default function Chatbot() {
   useEffect(() => {
     const initialMessages = [
       {
-        text: "Hey there! 👋",
+        text: "¡Hola! 👋",
         sender: "bot",
       },
       {
-        text: "Emily this side. Let’s find out if you qualify for the $5800 Spending Allowance — it’s quick and only takes 2 minutes!",
+        text: "Emily por aquí. Vamos a ver si calificas para la Tarjeta de Asistencia Alimentaria de $2800 — es rápido y solo toma 2 minutos.",
         sender: "bot",
         time: new Date().toTimeString(),
       },
       {
-        text: "Tap 'Yes' to get started! ⬇️",
+        text: "Toca ‘Sí’ para comenzar ⬇️",
         sender: "bot",
         options: ["👉 Yes! Show me how to claim!"],
         time: new Date().toTimeString(),
