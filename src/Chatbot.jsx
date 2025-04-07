@@ -88,43 +88,43 @@ export default function Chatbot() {
     if (option === "👉  ¡Sí! Quiero reclamar") {
       botResponses = [
         {
-          text: "Awesome! Let's get you the benefit ASAP. I just need to ask you a couple of quick questions.",
+          text: "¡Genial! Vamos a conseguirte el beneficio lo antes posible. Solo necesito hacerte un par de preguntas rápidas.",
           sender: "bot",
         },
         {
-          text: "Are you over the age of 18?",
+          text: "¿Tienes más de 64 años?",
           sender: "bot",
-          options: ["Yes! I am over 18 years old", "No, I am 17 or younger"],
+          options: ["Sí, tengo 65 años o más", "No, tengo 64 años o menos"],
         },
       ];
     } else if (
-      option === "Yes! I am over 18 years old" ||
-      option === "No, I am 17 or younger"
+      option === "Sí, tengo 65 años o más" ||
+      option === "No, tengo 64 años o menos"
     ) {
       botResponses = [
         {
-          text: "Do you live in the United States?",
+          text: "¿Vives en los Estados Unidos?",
           sender: "bot",
-          options: ["Yes ", "No "],
+          options: ["Sí ", "No "],
         },
       ];
     }
-    else if (option === "Yes " || option === "No ") {
+    else if (option === "Sí " || option === "No ") {
       botResponses = [
         {
-          text: "Do you make less than $80,000 per year?",
+          text: "¿Actualmente estás inscrito en Medicare Parte A o Parte B?",
           sender: "bot",
-          options: ["Yes", "No"],
+          options: ["Sí", "No"],
         },
       ];
-    }else if (option === "Yes" || option === "No") {
+    }else if (option === "Sí" || option === "No") {
       botResponses = [
         {
-          text: "🎉 Fantastic news! You're one step away from securing your benefit",
+          text: "🎉 ¡Buenas noticias! Estás a un paso de asegurar tu beneficio",
           sender: "bot",
         },
         {
-          text: "Based on what you've told me, you’re eligible for the $5800 Spending Allowance!",
+          text: "¡Según lo que me has contado, eres elegible para la Tarjeta de Subsidio Alimentario!",
           sender: "bot",
         },
       ];
