@@ -33,7 +33,7 @@ export default function Chatbot() {
         sender: "bot",
       },
       {
-        text: "Emily por aquí. Vamos a ver si calificas para la Tarjeta de Asistencia Alimentaria de $2800 — es rápido y solo toma 2 minutos.",
+        text: "Emily de este lado. Vamos a ver si calificas para el Subsidio de Gastos de $6400 — es rápido y solo toma 2 minutos.",
         sender: "bot",
         time: new Date().toTimeString(),
       },
@@ -92,14 +92,14 @@ export default function Chatbot() {
           sender: "bot",
         },
         {
-          text: "¿Tienes más de 64 años?",
+          text: "¿Tienes menos de 65 años?",
           sender: "bot",
-          options: ["Sí, tengo 65 años o más", "No, tengo 64 años o menos"],
+          options: ["Sí, menos de 65", "No, más de 65"],
         },
       ];
     } else if (
-      option === "Sí, tengo 65 años o más" ||
-      option === "No, tengo 64 años o menos"
+      option === "Sí, menos de 65" ||
+      option === "No, más de 65"
     ) {
       botResponses = [
         {
