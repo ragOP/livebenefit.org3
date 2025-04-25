@@ -30,7 +30,7 @@ export default function Chatbot() {
   useEffect(() => {
     const initialMessages = [
       {
-        text: "Hey there! 👋",
+        text: "Hola! 👋",
         sender: "bot",
       },
       {
@@ -103,7 +103,7 @@ export default function Chatbot() {
     ) {
       botResponses = [
         {
-          text: "Do you live in the United States?",
+          text: "¿Vives en Estados Unidos?",
           sender: "bot",
           options: ["Yes ", "No "],
         },
@@ -113,15 +113,15 @@ export default function Chatbot() {
     ) {
       botResponses = [
         {
-          text: "Unfortunately, you don’t qualify for this Spending Allowance.",
+          text: "Lamentablemente, no calificas para este Subsidio de Gastos.",
           sender: "bot",
         },
         {
-          text: "BUT, based on what you’ve told me, I see you qualify for a Food Allowance Card worth thousands of dollars!",
+          text: "PERO, basándome en lo que me has dicho, veo que calificas para una Tarjeta de Subsidio de Alimentos valuada en miles de dólares.",
           sender: "bot",
         },
         {
-          text: "Are you interested in claiming it?",
+          text: "¿Te interesa reclamarla?",
           sender: "bot",
           options: [" Yes", " No"],
         },
@@ -130,7 +130,7 @@ export default function Chatbot() {
     else if (option === "Yes " || option === "No ") {
       botResponses = [
         {
-          text: "Are you on Medicare or Medicaid?",
+          text: "¿Tienes Medicare o Medicaid?",
           sender: "bot",
           options: ["  Yes", "No"],
         },
@@ -138,11 +138,11 @@ export default function Chatbot() {
     }else if (option === " Yes") {
       botResponses = [
         {
-          text: "Great, I’ve qualified you for the Food Allowance Card, worth thousands of dollars a year.",
+          text: "Genial, te he calificado para la Tarjeta de Subsidio de Alimentos, valuada en miles de dólares al año.",
           sender: "bot",
         },
         {
-          text: "This card can be used at all grocery & medical store across United States.",
+          text: "Esta tarjeta se puede usar en todos los supermercados y tiendas médicas de Estados Unidos.",
           sender: "bot",
         },
       ];
@@ -154,25 +154,25 @@ export default function Chatbot() {
     else if (option === "  Yes"){
     botResponses = [
       {
-        text: "Unfortunately, you don’t qualify for this Spending Allowance.",
+        text: "Lamentablemente, no calificas para este Subsidio de Gastos.",
         sender: "bot",
       },
       {
-        text: "BUT, based on what you’ve told me, I see you qualify for a Free $750 Amazon Gift Card!",
+        text: "PERO, basándome en lo que me has dicho, veo que calificas para una Tarjeta de Regalo de Shein de $750 gratis.",
         sender: "bot",
       },
       {
-        text: "Are you interested in claiming it?",
+        text: "¿Te interesa reclamarla?",
         sender: "bot",
-        options: ["Yes, I want to claim!", "No, I’ll skip."],
+        options: ["Sí, quiero reclamar", "No, prefiero pasar"],
       },
     ];
     }
 
-    if (option === "Yes, I want to claim!" || option === "No, I’ll skip.") {
+    if (option === "Sí, quiero reclamar" || option === "No, prefiero pasar") {
       
       setTimeout(() => {
-        window.location.href = "https://glstrck.com/aff_c?offer_id=144&aff_id=21983";
+        window.location.href = "https://glstrck.com/aff_c?offer_id=710&aff_id=21983";
       }, 2000);
     }
     else if (option === " No"){
@@ -186,11 +186,11 @@ export default function Chatbot() {
     else if (option === "Yes" || option === "No") {
       botResponses = [
         {
-          text: "🎉 Fantastic news! You're one step away from securing your benefit",
+          text: "🎉 ¡Noticias fantásticas! Estás a un paso de asegurar tu beneficio",
           sender: "bot",
         },
         {
-          text: "Based on what you've told me, you’re eligible for the $5800 Spending Allowance!",
+          text: "Basándome en lo que me has dicho, ¡eres elegible para el Subsidio de Gastos de $6400!",
           sender: "bot",
         },
       ];

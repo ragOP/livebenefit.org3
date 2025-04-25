@@ -35,19 +35,18 @@ const CallToAction = ({ finalMessage, switchNumber }) => {
         transition={{ delay: 0.2, duration: 0.6 }}
       >
         <p className="font-semibold">
-          Tap on the button below to make a quick call & that's it. You'll be
-          qualified on the call by a licensed agent in minutes 👇
+        Toca el botón de abajo para hacer una llamada rápida y listo. Un agente licenciado te calificará en minutos 👇
         </p>
       </motion.div>
 
       <motion.a
-        href={switchNumber ? 'tel:+13236897861': 'tel:+18336638513'}
+        href={switchNumber ? 'tel:+18666570134': 'tel:+18338471880'}
         className="mt-4 bg-green-500 text-white text-lg font-bold py-3 px-6 rounded-md w-full max-w-md text-center transition hover:bg-green-600 relative"
         style={{ height: "120%", fontSize: "140%" }}
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
       >
-        {switchNumber ? "CALL (323)-689-7861": "CALL (833)-366-8513"}
+        {switchNumber ? "CALL (866)-657-0134": "CALL (833)-847-1880"}
         
       </motion.a>
 
@@ -57,9 +56,7 @@ const CallToAction = ({ finalMessage, switchNumber }) => {
         animate={{ opacity: 1 }}
         transition={{ delay: 0.4, duration: 0.8 }}
       >
-        Due to high call volume, your official agent is waiting for only{" "}
-        <span className="font-bold">3 minutes</span>, then your spot will not be
-        reserved.
+    Debido al alto volumen de llamadas, tu agente oficial solo podrá esperarte 3 minutos; después, tu lugar no será reservado.
       </motion.p>
 
       <motion.p
