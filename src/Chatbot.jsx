@@ -74,7 +74,7 @@ export default function Chatbot() {
     if (option === "👉 ¡Sí! Quiero reclamar") {
       setMessages((prev) => [
         ...prev,
-        { text: "Yes", sender: "user", time: new Date().toTimeString() },
+        { text: "Sí", sender: "user", time: new Date().toTimeString() },
       ]);
     } else {
       setMessages((prev) => [
@@ -105,7 +105,7 @@ export default function Chatbot() {
         {
           text: "¿Vives en Estados Unidos?",
           sender: "bot",
-          options: ["Yes ", "No "],
+          options: ["Sí ", "No "],
         },
       ];
     }else if (
@@ -123,19 +123,19 @@ export default function Chatbot() {
         {
           text: "¿Te interesa reclamarla?",
           sender: "bot",
-          options: [" Yes", " No"],
+          options: [" Sí", " No"],
         },
       ];
     }
-    else if (option === "Yes " || option === "No ") {
+    else if (option === "Sí " || option === "No ") {
       botResponses = [
         {
           text: "¿Tienes Medicare o Medicaid?",
           sender: "bot",
-          options: ["  Yes", "No"],
+          options: ["  Sí", "No"],
         },
       ];
-    }else if (option === " Yes") {
+    }else if (option === " Sí") {
       botResponses = [
         {
           text: "Genial, te he calificado para la Tarjeta de Subsidio de Alimentos, valuada en miles de dólares al año.",
@@ -151,7 +151,7 @@ export default function Chatbot() {
         setFinalMessage(true);
       }, 4000);
     }
-    else if (option === "  Yes"){
+    else if (option === "  Sí"){
     botResponses = [
       {
         text: "Lamentablemente, no calificas para este Subsidio de Gastos.",
@@ -183,7 +183,7 @@ export default function Chatbot() {
         },
       ];
     }
-    else if (option === "Yes" || option === "No") {
+    else if (option === "Sí" || option === "No") {
       botResponses = [
         {
           text: "🎉 ¡Noticias fantásticas! Estás a un paso de asegurar tu beneficio",
