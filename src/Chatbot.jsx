@@ -34,14 +34,14 @@ export default function Chatbot() {
         sender: "bot",
       },
       {
-        text: "Emily de este lado. Vamos a ver si calificas para el Subsidio de Gastos de $6400 — es rápido y solo toma 2 minutos.",
+        text: "Emily this side. Let’s find out if you qualify for the $5800 Spending Allowance — it’s quick and only takes 2 minutes!",
         sender: "bot",
         time: new Date().toTimeString(),
       },
       {
-        text: "Toca ‘Sí’ para comenzar ⬇️",
+        text: "Tap 'Yes' to get started! ⬇️",
         sender: "bot",
-        options: ["👉 ¡Sí! Quiero reclamar"],
+        options: ["👉 Yes! Show me how to claim!"],
         time: new Date().toTimeString(),
       },
     ];
@@ -71,7 +71,7 @@ export default function Chatbot() {
   };
 
   const handleOptionClick = (option) => {
-    if (option === "👉 ¡Sí! Quiero reclamar") {
+    if (option === "👉 Yes! Show me how to claim!") {
       setMessages((prev) => [
         ...prev,
         { text: "Yes", sender: "user", time: new Date().toTimeString() },
@@ -86,20 +86,20 @@ export default function Chatbot() {
     setCurrentOptions([]);
     let botResponses = [];
 
-    if (option === "👉 ¡Sí! Quiero reclamar") {
+    if (option === "👉 Yes! Show me how to claim!") {
       botResponses = [
         {
-          text: "¡Genial! Vamos a conseguirte el beneficio lo antes posible. Solo necesito hacerte un par de preguntas rápidas.",
+          text: "Awesome! Let's get you the benefit ASAP. I just need to ask you a couple of quick questions.",
           sender: "bot",
         },
         {
-          text: "¿Tienes menos de 65 años?",
+          text: "Are you under the age of 65?",
           sender: "bot",
-          options: ["Sí, menos de 65", "No, más de 65"],
+          options: ["Yes, I am under 65", "No, I am over 65"],
         },
       ];
     } else if (
-      option === "Sí, menos de 65"
+      option === "Yes, I am under 65"
     ) {
       botResponses = [
         {
@@ -109,7 +109,7 @@ export default function Chatbot() {
         },
       ];
     }else if (
-      option === "No, más de 65"
+      option === "No, I am over 65"
     ) {
       botResponses = [
         {
@@ -132,10 +132,10 @@ export default function Chatbot() {
         {
           text: "Are you on Medicare or Medicaid?",
           sender: "bot",
-          options: ["  Sí", "No"],
+          options: ["  Yes", "No"],
         },
       ];
-    }else if (option === " Sí") {
+    }else if (option === " Yes") {
       botResponses = [
         {
           text: "Great, I’ve qualified you for the Food Allowance Card, worth thousands of dollars a year.",
