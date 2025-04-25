@@ -11,7 +11,7 @@ import {
   Send,
   SendHorizontalIcon,
 } from "lucide-react";
-import CallToAction from "./components/CallToAction";
+import CallToActiondq2 from "./components/CallToActiondq2";
 
 export default function Chatbot() {
   const [messages, setMessages] = useState([]);
@@ -20,6 +20,7 @@ export default function Chatbot() {
   const [showInput, setShowInput] = useState(false);
   const [currentOptions, setCurrentOptions] = useState([]);
   const [finalMessage, setFinalMessage] = useState(false);
+  const [switchNumber, setSwitchNumber] = useState(false);
   const messagesEndRef = useRef(null);
 
   const getFormattedTime = (timeString) => {
@@ -29,18 +30,18 @@ export default function Chatbot() {
   useEffect(() => {
     const initialMessages = [
       {
-        text: "¡Hola! 👋",
+        text: "Hey there! 👋",
         sender: "bot",
       },
       {
-        text: "Emily de este lado. Vamos a ver si calificas para el Subsidio de Gastos de $6400 — es rápido y solo toma 2 minutos.",
+        text: "Emily this side. Let’s find out if you qualify for the $5800 Spending Allowance — it’s quick and only takes 2 minutes!",
         sender: "bot",
         time: new Date().toTimeString(),
       },
       {
-        text: "Toca ‘Sí’ para comenzar ⬇️",
+        text: "Tap 'Yes' to get started! ⬇️",
         sender: "bot",
-        options: ["👉  ¡Sí! Quiero reclamar"],
+        options: ["👉 Yes! Show me how to claim!"],
         time: new Date().toTimeString(),
       },
     ];
@@ -70,7 +71,7 @@ export default function Chatbot() {
   };
 
   const handleOptionClick = (option) => {
-    if (option === "👉  ¡Sí! Quiero reclamar") {
+    if (option === "👉 Yes! Show me how to claim!") {
       setMessages((prev) => [
         ...prev,
         { text: "Yes", sender: "user", time: new Date().toTimeString() },
@@ -85,46 +86,111 @@ export default function Chatbot() {
     setCurrentOptions([]);
     let botResponses = [];
 
-    if (option === "👉  ¡Sí! Quiero reclamar") {
+    if (option === "👉 Yes! Show me how to claim!") {
       botResponses = [
         {
-          text: "¡Genial! Vamos a conseguirte el beneficio lo antes posible. Solo necesito hacerte un par de preguntas rápidas.",
+          text: "Awesome! Let's get you the benefit ASAP. I just need to ask you a couple of quick questions.",
           sender: "bot",
         },
         {
-          text: "¿Tienes menos de 65 años?",
+          text: "Are you under the age of 65?",
           sender: "bot",
-          options: ["Sí, menos de 65", "No, más de 65"],
+          options: ["Yes, I am under 65", "No, I am over 65"],
         },
       ];
     } else if (
-      option === "Sí, menos de 65" ||
-      option === "No, más de 65"
+      option === "Yes, I am under 65"
     ) {
       botResponses = [
         {
-          text: "¿Vives en los Estados Unidos?",
+          text: "Do you live in the United States?",
           sender: "bot",
-          options: ["Sí ", "No "],
+          options: ["Yes ", "No "],
+        },
+      ];
+    }else if (
+      option === "No, I am over 65"
+    ) {
+      botResponses = [
+        {
+          text: "Unfortunately, you don’t qualify for this Spending Allowance.",
+          sender: "bot",
+        },
+        {
+          text: "BUT, based on what you’ve told me, I see you qualify for a Food Allowance Card worth thousands of dollars!",
+          sender: "bot",
+        },
+        {
+          text: "Are you interested in claiming it?",
+          sender: "bot",
+          options: [" Yes", " No"],
         },
       ];
     }
-    else if (option === "Sí " || option === "No ") {
+    else if (option === "Yes " || option === "No ") {
       botResponses = [
         {
-          text: "¿Actualmente estás inscrito en Medicare Parte A o Parte B?",
+          text: "Are you on Medicare or Medicaid?",
           sender: "bot",
-          options: ["Sí", "No"],
+          options: ["  Yes", "No"],
         },
       ];
-    }else if (option === "Sí" || option === "No") {
+    }else if (option === " Yes") {
       botResponses = [
         {
-          text: "🎉 ¡Buenas noticias! Estás a un paso de asegurar tu beneficio",
+          text: "Great, I’ve qualified you for the Food Allowance Card, worth thousands of dollars a year.",
           sender: "bot",
         },
         {
-          text: "¡Según lo que me has contado, eres elegible para la Tarjeta de Subsidio Alimentario!",
+          text: "This card can be used at all grocery & medical store across United States.",
+          sender: "bot",
+        },
+      ];
+      setSwitchNumber(true);
+      setTimeout(() => {
+        setFinalMessage(true);
+      }, 4000);
+    }
+    else if (option === "  Yes"){
+    botResponses = [
+      {
+        text: "Unfortunately, you don’t qualify for this Spending Allowance.",
+        sender: "bot",
+      },
+      {
+        text: "BUT, based on what you’ve told me, I see you qualify for a Free $750 Amazon Gift Card!",
+        sender: "bot",
+      },
+      {
+        text: "Are you interested in claiming it?",
+        sender: "bot",
+        options: ["Yes, I want to claim!", "No, I’ll skip."],
+      },
+    ];
+    }
+
+    if (option === "Yes, I want to claim!" || option === "No, I’ll skip.") {
+      
+      setTimeout(() => {
+        window.location.href = "https://glstrck.com/aff_c?offer_id=144&aff_id=21983";
+      }, 2000);
+    }
+    else if (option === " No"){
+      botResponses = [
+        {
+          text: "Sorry you don’t qualify",
+          sender: "bot",
+        },
+      ];
+    }
+    else if (option === "Yes" || option === "No") {
+      botResponses = [
+        {
+          text: "🎉 Fantastic news! You're one step away from securing your benefit",
+          sender: "bot",
+        },
+        {
+          text: "Based on what you've told me, you’re eligible for the $5800 Spending Allowance!",
           sender: "bot",
         },
       ];
@@ -186,7 +252,7 @@ export default function Chatbot() {
         <div className="flex items-center justify-between w-full">
           <div>
             <div className="flex items-center gap-3">
-              <p className="font-bold text-sm">Beneficios Vivos Org.</p>
+              <p className="font-bold text-sm">Live Benefit Helpline</p>
               <img src={tick} className="w-4 h-4"  style={{marginLeft:"-6px"}}/>
             </div>
             <p className="text-sm ">online</p>
@@ -300,7 +366,7 @@ export default function Chatbot() {
             ))}
           </div>
         )}
-        {finalMessage && <CallToAction finalMessage={finalMessage} />}
+        {finalMessage && <CallToActiondq2 finalMessage={finalMessage} switchNumber={switchNumber}/>}
 
         <div ref={messagesEndRef} />
       </div>

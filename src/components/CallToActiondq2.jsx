@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
-const CallToAction = ({ finalMessage }) => {
+const CallToAction = ({ finalMessage, switchNumber }) => {
   const [time, setTime] = useState(180);
 
   useEffect(() => {
@@ -35,18 +35,20 @@ const CallToAction = ({ finalMessage }) => {
         transition={{ delay: 0.2, duration: 0.6 }}
       >
         <p className="font-semibold">
-          Toca el botón de abajo para hacer una llamada rápida y listo. Un agente con licencia te calificará en minutos 👇
+          Tap on the button below to make a quick call & that's it. You'll be
+          qualified on the call by a licensed agent in minutes 👇
         </p>
       </motion.div>
 
       <motion.a
-        href="tel:+18338471880"
+        href={switchNumber ? 'tel:+13236897861': 'tel:+18336638513'}
         className="mt-4 bg-green-500 text-white text-lg font-bold py-3 px-6 rounded-md w-full max-w-md text-center transition hover:bg-green-600 relative"
         style={{ height: "120%", fontSize: "140%" }}
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
       >
-        CALL (833)-847-1880
+        {switchNumber ? "CALL (323)-689-7861": "CALL (833)-366-8513"}
+        
       </motion.a>
 
       <motion.p
@@ -55,9 +57,9 @@ const CallToAction = ({ finalMessage }) => {
         animate={{ opacity: 1 }}
         transition={{ delay: 0.4, duration: 0.8 }}
       >
-Debido al alto volumen de llamadas, tu agente oficial solo esperará  <span className="font-bold">3 minutos.</span> Después, tu lugar ya no estará reservado.
-        
-    
+        Due to high call volume, your official agent is waiting for only{" "}
+        <span className="font-bold">3 minutes</span>, then your spot will not be
+        reserved.
       </motion.p>
 
       <motion.p
