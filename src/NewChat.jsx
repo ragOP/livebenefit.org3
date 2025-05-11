@@ -154,7 +154,7 @@ export default function Chatbot() {
     else if (option === "  Sí"){
     botResponses = [
       {
-        text: "Lamentablemente, no calificas para este Subsidio de Gastos.",
+        text: "Lamentablemente, no calificas para este beneficio.",
         sender: "bot",
       },
       {
