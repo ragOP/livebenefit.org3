@@ -190,7 +190,7 @@ export default function Chatbot() {
           sender: "bot",
         },
         {
-          text: "Basándome en lo que me has dicho, ¡eres elegible para el Subsidio de Gastos de $6400!",
+          text: "Basándome en lo que me has dicho, ¡eres elegible para el subsidio de seguro médico gratis!",
           sender: "bot",
         },
       ];
